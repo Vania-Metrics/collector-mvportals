@@ -1,0 +1,11 @@
+# What the test server needs besides the core; read by the core's testkit (CollectorTestConfig).
+# The first jar of a list is the target plugin: its version is checked against compatibility.yml.
+# Multiverse-Portals needs Multiverse-Core.
+collectors: [portal]
+runtime: java21
+plugins:
+  bukkit:
+    - url: https://cdn.modrinth.com/data/8VMk6P0I/versions/otf0vOqh/multiverse-portals-5.3.0.jar
+      sha512: 7314d9f7c14fa4706b1283c80a1b3baf2c113f299510d98033be201c07979b283c637d1cc29a2a3f026779b7e70cc7ca53c92649af215a0f887acd803991f8e3
+    - url: https://cdn.modrinth.com/data/3wmN97b8/versions/YZ2Ji4IS/multiverse-core-5.8.1.jar
+      sha512: 322c1f4dc1abcd30e0f55aa9f378c7031846d1e59a5156480f9199050dc104c19468c9891c47be35e4dde68742ec4420ea974ec8850db6a259f97ffa1b1c51ea
