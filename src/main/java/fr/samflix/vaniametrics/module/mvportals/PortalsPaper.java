@@ -7,26 +7,26 @@ import fr.samflix.vaniametrics.api.VaniaMetrics;
 import fr.samflix.vaniametrics.api.VaniaMetricsProvider;
 
 /**
- * Métriques de passage de portail.
+ * Portal traversal metrics.
  *
- * <p>Un compteur de circulation : il dit quels portails servent et lesquels sont morts.
+ * <p>A traffic counter: it tells which portals are used and which are dead.
  */
 public final class PortalsPaper extends JavaPlugin {
 
-	private PortalsCollector collecteur;
+	private PortalsCollector collector;
 
 	@Override
 	public void onEnable() {
-		VaniaMetrics metriques = VaniaMetricsProvider.get();
-		collecteur = new PortalsCollector();
-		metriques.enregistrer(collecteur);
-		Bukkit.getPluginManager().registerEvents(collecteur, this);
+		VaniaMetrics metrics = VaniaMetricsProvider.get();
+		collector = new PortalsCollector();
+		metrics.register(collector);
+		Bukkit.getPluginManager().registerEvents(collector, this);
 	}
 
 	@Override
 	public void onDisable() {
-		if (collecteur != null) {
-			VaniaMetricsProvider.chercher().ifPresent(m -> m.retirer(collecteur));
+		if (collector != null) {
+			VaniaMetricsProvider.find().ifPresent(m -> m.unregister(collector));
 		}
 	}
 }

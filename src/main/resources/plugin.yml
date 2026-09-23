@@ -1,10 +1,10 @@
-# Métriques de passage de portail.
+# Portal traversal metrics.
 #
-# Un compteur de circulation : il dit quels portails servent et lesquels sont morts.
+# A traffic counter: it tells which portals are used and which are dead.
 name: VaniaMetrics-Portals
 version: ${version}
 main: fr.samflix.vaniametrics.module.mvportals.PortalsPaper
 api-version: '1.21'
 authors: [mc-vania]
-description: "Métriques Multiverse-Portals : passages par monde."
+description: "Multiverse-Portals metrics: traversals per world."
 depend: [VaniaMetrics, Multiverse-Portals]
